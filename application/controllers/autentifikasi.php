@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') or exit('No direct script access allowed');
 class autentifikasi extends CI_Controller
 {
     public function index()
@@ -44,7 +44,7 @@ class autentifikasi extends CI_Controller
         if ($user) 
         {
             //jika user sudah aktif
-            if ($user['is_active'] == 0) {
+            if ($user['is_active'] == 1) {
             
                 //cek password
                 if (password_verify($password, $user['password'])) 
